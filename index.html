@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="css/jquery.mobile.theme-1.4.5.css" />
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/jquery-1.12.4.min.js"></script>
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+    </head>
+    <body>
+        <!-- Start of first page -->
+        <div data-role="page" id="home" data-theme="b">
+
+            <div class="header-container" data-role="header">
+                <h1>Incident Reports</h1>
+                <button onclick="reloadPage();" data-icon="refresh" class="ui-btn-left">&nbsp;</button>
+                <a href="#new" data-transition="slide" data-icon="plus" class="ui-btn-right">&nbsp;</a>
+            </div>
+                
+            <div role="main" class="ui-content">
+                
+                <div id="notification">
+                    <h4>A New Incident Report added</h4>
+                </div>
+                <!-- this will show our spinner -->
+                <div id="spinner"></div>
+
+                <!-- The Listview that holds the data from the api -->
+                <ul id="mylist" data-role="listview" data-inset="true">
+
+                </ul>
+            </div><!-- /content -->
+            
+
+            <!-- <div data-role="footer">
+                <h4>Page Footer</h4>
+            </div>/footer -->
+        </div><!-- /page -->
+
+        <!-- Start of second page -->
+        <div data-role="page" id="new" data-theme="b">
+
+            <div class="header-container" data-role="header">
+                <h1>Add New Report</h1>
+                <a href="#home" data-transition="slide" data-icon="arrow-l" class="ui-btn-left">&nbsp;</a>
+            </div>
+            
+            <div role="main" class="ui-content">
+                <form name="post-form" id="post-form">
+                    <label for="title">Title of Incident:</label>
+                    <input type="text" name="title" id="title" placeholder="e.g Accident, Fighting, Rioting etc. " value="" style="margin-bottom: 20px;">
+
+                    <label for="content">Explain what happened:</label>
+                    <textarea cols="40" rows="10" name="content" id="content" placeholder="Details and Location Description" data-mini="true" style="margin-bottom: 20px;"></textarea>
+
+                    <label for="status">Status</label>
+                    <select name="status" id="status">
+                        <option value="publish">Publish</option>
+                        <option value="draft">Draft</option>
+                    </select>
+
+                    <input type="submit" name="post" value="POST" data-theme="a">  
+                    
+                </form>
+            </div><!-- /content -->
+
+            <!-- <div data-role="footer">
+                <h4>Page Footer</h4>
+            </div>/footer -->
+        </div><!-- /page -->
+        <script src="js/index.js"></script>
+    </body>
+</html>
